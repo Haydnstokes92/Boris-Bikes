@@ -2,15 +2,19 @@ require_relative 'bike'
 
 
 class DockingStation
-  attr_reader :bike 
-
   def release_bike
-    fail 'No bikes available' 
     Bike.new
   end
 
   def dock(bike)
     @bike = bike
   end
-end
 
+  def bike
+    @bike
+  end
+
+  # this will essentially write the method above
+  # on any instances of this class
+  attr_reader :bike
+end
